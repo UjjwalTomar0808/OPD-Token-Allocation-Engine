@@ -23,6 +23,9 @@ This project implements a Node.js/Express/MongoDB backend for a smart OPD token 
 
 ### API Endpoints
 
+- **GET /api/doctors**
+    - Logic: Returns a list of all available doctors with their details (Name, Department, IDs).
+
 - **POST /api/tokens/issue**
     - Body: `{ "doctorId": "...", "source": "..." }`
     - Logic: Calculates initial score, finds first valid slot, handles preemption if Emergency.
