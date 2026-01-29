@@ -79,6 +79,33 @@ A `simulate.js` script is provided to demonstrate:
 5.  **Chaos Event 3**: Cancellation & Gap Filling.
 
 ### How to Run
-1.  Ensure MongoDB is running locally (`mongod`).
-2.  Install dependencies: `npm install`
-3.  Run simulation: `node simulate.js`
+
+1.  **Setup Environment**
+    - Ensure MongoDB is running (or set `MONGODB_URI` in `.env`).
+    - Install dependencies: `npm install`
+
+2.  **Seed Data (Optional)**
+    - Run the simulation to populate the database with doctors and sample tokens:
+      ```bash
+      node simulate.js
+      ```
+
+3.  **Start Server**
+    - Run the API server:
+      ```bash
+      npm start
+      ```
+    - The server runs on `http://localhost:3000`.
+
+4.  **Interact via CLI**
+    - In a new terminal window, run the interactive CLI tool:
+      ```bash
+      node cli.js
+      ```
+    - This allows you to list doctors, check queues, issue tokens, and cancel tokens easily.
+
+### CLI Features
+- **List Doctors**: View all available doctors and their IDs.
+- **View Queue**: Check the live queue status for any doctor.
+- **Issue Token**: Create new appointments.
+- **Cancel Token**: Remove appointments and see "Gap Filling" in action.
